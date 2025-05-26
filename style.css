@@ -1,1 +1,233 @@
-/* Add your CSS here */
+/* Intel-branded background for hero */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #0071c5 0%, #00a6e0 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Hide vertical scrollbar for the whole page but keep scrolling */
+body, html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+  display: none;
+}
+
+/* Hero section styling */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  position: relative;
+}
+.hero-logo {
+  width: 160px;
+  max-width: 80vw;
+  margin-bottom: 1rem;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 8px #005b9f;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  max-width: 500px;
+  margin: 0 auto 1rem auto;
+  color: #e0f7fa;
+}
+/* Scroll down indicator styling */
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  background: rgba(0,113,197,0.95);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.2s;
+  z-index: 2;
+}
+.scroll-indicator:hover {
+  background: #005b9f;
+}
+.scroll-indicator .arrow {
+  font-size: 1.3em;
+  animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(8px); }
+}
+
+/* Timeline container: horizontal on large, vertical on small */
+.timeline, .milestone-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: var(--gap, 2rem);
+  padding: 2rem 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  height: 100vh;
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+}
+.timeline::-webkit-scrollbar,
+.timeline::-webkit-scrollbar-vertical,
+.timeline::-webkit-scrollbar-horizontal,
+.milestone-container::-webkit-scrollbar,
+.milestone-container::-webkit-scrollbar-vertical,
+.milestone-container::-webkit-scrollbar-horizontal {
+  width: 0;
+  height: 0;
+  background: transparent;
+  display: none;
+}
+
+/* Responsive cards per row using CSS variables */
+:root {
+  --cards-per-row: 5;
+  --gap: 1rem;
+}
+@media (max-width: 1400px) {
+  :root { --cards-per-row: 4; }
+}
+@media (max-width: 1000px) {
+  :root { --cards-per-row: 3; }
+}
+@media (max-width: 700px) {
+  :root { --cards-per-row: 2; }
+}
+@media (max-width: 500px) {
+  :root { --cards-per-row: 1; }
+}
+
+/* Milestone card styling */
+.milestone {
+  background: #fff;
+  color: #222;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  flex: 0 0 calc((100% - (var(--gap) * (var(--cards-per-row) - 1))) / var(--cards-per-row));
+  padding: 1.5rem 1rem 1rem 1rem;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  scroll-snap-align: start;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  overflow: visible;
+}
+.milestone:hover,
+.milestone:focus-within {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,113,197,0.18);
+}
+.milestone img {
+  width: 100%;
+  max-width: 220px;
+  border-radius: 8px;
+  margin: 0.5rem 0 1rem 0;
+  background: #e3eaf3;
+}
+.milestone h2 {
+  font-size: 1.3rem;
+  color: #0071c5;
+  margin: 0 0 0.2rem 0;
+}
+.milestone h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  color: #005b9f;
+}
+
+/* Milestone details overlay */
+.milestone-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,113,197,0.95); /* Intel blue, mostly opaque */
+  color: #fff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  max-height: none;
+  margin: 0;
+}
+.milestone.show-details .milestone-details,
+.milestone:hover .milestone-details,
+.milestone:focus-within .milestone-details {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive font for hero */
+@media (max-width: 500px) {
+  .hero-title { font-size: 1.5rem; }
+  .hero-logo { width: 110px; }
+}
+
+/* Stack timeline vertically and cards fill most of screen on small screens */
+@media (max-width: 600px) {
+  .timeline, .milestone-container {
+    flex-direction: column;
+    overflow-x: unset;
+    overflow-y: auto;
+    align-items: center;
+    min-height: 100vh;
+    height: 100vh;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* Enable vertical scroll snap for mobile */
+    scroll-snap-type: y mandatory;
+  }
+  .timeline::-webkit-scrollbar,
+  .milestone-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+    display: none;
+  }
+  .milestone {
+    width: 90vw;
+    flex: unset;
+    /* Each card snaps to start of viewport vertically */
+    scroll-snap-align: start;
+  }
+}

@@ -1,143 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Intel: Sustainability Through the Ages</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--
+    Intel Sustainability Timeline Assignment
+    - Hero section styled with Intel branding
+    - Timeline scrolls horizontally on large screens, stacks vertically on small screens
+    - Flexbox used for layout
+    - Milestone cards styled and interactive (details on hover)
+    - Beginner-friendly code with comments
+  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Header / Hero Section -->
-  <header>
-    <div>
-      <!-- Ask Copilot to teach you about `.svg` 🙂 -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
-      <!-- Main Heading -->
-      <h1>
-        Sustainability Through the Ages
-      </h1>
-
-      <!-- Subheading / Description -->
-      <p>
-        Explore Intel's journey through time, discovering how our commitment
-        to innovation has shaped a more sustainable future for technology 
-        and our planet.
-      </p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="img/intel-header-logo.svg" alt="Intel Logo" class="hero-logo" />
+    <div class="hero-title">Sustainability Through the Ages</div>
+    <div class="hero-subtitle">
+      Explore Intel's journey through time, discovering how our commitment
+      to innovation has shaped a more sustainable future for technology and our planet.
     </div>
-  </header>
-
-  <!-- Timeline Cards Section -->
-  <section>
-
-    <!-- Card 1: 1968 -->
-    <div>
+    <!-- Scroll Down Indicator -->
+    <button class="scroll-indicator" onclick="document.querySelector('.timeline').scrollIntoView({behavior: 'smooth'});">
+      <span>View Timeline</span>
+      <span class="arrow">&#8595;</span>
+    </button>
+  </section>
+  <!-- Timeline Section -->
+  <section class="timeline">
+    <!-- Milestone 1 -->
+    <div class="milestone" tabindex="0">
       <h2>1968</h2>
       <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Placeholder Image" />
-      <p>
-        Robert Noyce and Gordon Moore rename the newly formed company 
-        NM Electronics to Intel Corporation, laying the foundation for 
-        decades of technological innovation.
-      </p>
+      <img src="img/1.jpg" alt="Intel Founded" />
+      <div class="milestone-details">
+        Robert Noyce and Gordon Moore rename the newly formed company NM Electronics to Intel Corporation, laying the foundation for decades of technological innovation.
+      </div>
     </div>
-
-    <!-- Card 2: 1971 -->
-    <div>
+    <!-- Milestone 2 -->
+    <div class="milestone" tabindex="0">
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
-      <img src="img/2.jpg" alt="Placeholder Image" />
-      <p>
-        Intel debuts the 4004, the world's first commercial microprocessor, 
-        igniting the microprocessor revolution and propelling the future 
-        of computing devices.
-      </p>
+      <img src="img/2.jpg" alt="First Microprocessor" />
+      <div class="milestone-details">
+        Intel debuts the 4004, the world's first commercial microprocessor, igniting the microprocessor revolution and propelling the future of computing devices.
+      </div>
     </div>
-
-    <!-- Card 3: 1978 -->
-    <div>
+    <!-- Milestone 3 -->
+    <div class="milestone" tabindex="0">
       <h2>1978</h2>
       <h3>8086 Processor</h3>
-      <img src="img/3.jpg" alt="Placeholder Image" />
-      <p>
-        Launch of the 8086 processor, establishing the x86 architecture 
-        that drives countless PCs and servers in the modern era.
-      </p>
+      <img src="img/3.jpg" alt="8086 Processor" />
+      <div class="milestone-details">
+        Launch of the 8086 processor, establishing the x86 architecture that drives countless PCs and servers in the modern era.
+      </div>
     </div>
-
-    <!-- Card 4: 1985 -->
-    <div>
+    <!-- Milestone 4 -->
+    <div class="milestone" tabindex="0">
       <h2>1985</h2>
       <h3>386 Processor</h3>
-      <img src="img/4.jpg" alt="Placeholder Image" />
-      <p>
-        Intel introduces the 386 processor with 32-bit architecture, 
-        ushering in a new era of performance and multitasking for 
-        personal computers.
-      </p>
+      <img src="img/4.jpg" alt="386 Processor" />
+      <div class="milestone-details">
+        Intel introduces the 386 processor with 32-bit architecture, ushering in a new era of performance and multitasking for personal computers.
+      </div>
     </div>
-
-    <!-- Card 5: 2006 -->
-    <div>
+    <!-- Milestone 5 -->
+    <div class="milestone" tabindex="0">
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        This year marks Intel's highest annual greenhouse gas emissions 
-        for operations. Over subsequent years, Intel invests heavily in 
-        chemical abatement, renewable energy, and energy-efficient 
-        manufacturing to reverse this trend.
-      </p>
+      <img src="https://placehold.co/250x100" alt="Peak GHG Emissions" />
+      <div class="milestone-details">
+        This year marks Intel's highest annual greenhouse gas emissions for operations. Over subsequent years, Intel invests heavily in chemical abatement, renewable energy, and energy-efficient manufacturing to reverse this trend.
+      </div>
     </div>
-
-    <!-- Card 6: 2020 -->
-    <div>
+    <!-- Milestone 6 -->
+    <div class="milestone" tabindex="0">
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
-        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
-        progress on climate action, water stewardship, and waste reduction.
-      </p>
+      <img src="https://placehold.co/250x100" alt="RISE Strategy" />
+      <div class="milestone-details">
+        Intel launches its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy and 2030 goals, aiming to drive industry-wide progress on climate action, water stewardship, and waste reduction.
+      </div>
     </div>
-
-    <!-- Card 7: 2022 -->
-    <div>
+    <!-- Milestone 7 -->
+    <div class="milestone" tabindex="0">
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel announces its commitment to achieve net-zero greenhouse 
-        gas emissions (Scope 1 and 2) across its global operations 
-        by 2040, building on years of environmental initiatives.
-      </p>
+      <img src="https://placehold.co/250x100" alt="Net-Zero By 2040" />
+      <div class="milestone-details">
+        Intel announces its commitment to achieve net-zero greenhouse gas emissions (Scope 1 and 2) across its global operations by 2040, building on years of environmental initiatives.
+      </div>
     </div>
-
-    <!-- Card 8: 2023 -->
-    <div>
+    <!-- Milestone 8 -->
+    <div class="milestone" tabindex="0">
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        The company achieves 99% renewable electricity usage worldwide, 
-        helping to drastically lower carbon emissions and driving progress 
-        toward Intel's long-term sustainability goals.
-      </p>
+      <img src="https://placehold.co/250x100" alt="Renewable Electricity" />
+      <div class="milestone-details">
+        The company achieves 99% renewable electricity usage worldwide, helping to drastically lower carbon emissions and driving progress toward Intel's long-term sustainability goals.
+      </div>
     </div>
-
-    <!-- Card 9: 2024 -->
-    <div>
+    <!-- Milestone 9 -->
+    <div class="milestone" tabindex="0">
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <img src="https://placehold.co/250x100" alt="Placeholder Image" />
-      <p>
-        Intel hosts its first Sustainability Summit, uniting suppliers, 
-        government officials, and industry leaders to collaborate on 
-        next-generation sustainable semiconductor manufacturing.
-      </p>
+      <img src="https://placehold.co/250x100" alt="Sustainability Summit" />
+      <div class="milestone-details">
+        Intel hosts its first Sustainability Summit, uniting suppliers, government officials, and industry leaders to collaborate on next-generation sustainable semiconductor manufacturing.
+      </div>
     </div>
   </section>
-  <p>Scroll to view timeline | Hover over cards to learn more!</p>
+  
+  <!--
+    - The hero section uses Intel branding and is styled for contrast and clarity.
+    - The timeline uses flexbox for horizontal scrolling on large screens and stacks vertically on small screens.
+    - Milestone cards reveal more details on hover or focus for accessibility.
+    - All code is commented and beginner-friendly.
+  -->
+<script>
+  // Make milestone cards scroll into view when clicked
+  var milestones = document.querySelectorAll('.milestone');
+  milestones.forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      // Make sure we always scroll the card, no matter what part we click
+      card.scrollIntoView({ 
+        behavior: 'smooth', 
+        inline: 'center', 
+        block: 'nearest' 
+      });
+    });
+  });
+</script>
 </body>
 </html>
+
+
